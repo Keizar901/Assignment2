@@ -1,0 +1,48 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @trainer.name %>
+</p>
+<% @tnum = 0 %>
+<% @trainer.tokimons.each do |tokimon| %>
+<% @tnum += 1 %>
+<% end %>
+<p>
+  <strong>Level:</strong>
+  <%= (@tnum/3) %>
+</p>
+
+<h3>Tokimon</h3>
+<table>
+<tr> 
+    <th>Name</th>  
+    <th>Weight</th>  
+    <th>Height</th> 
+    <th>Fly</th> 
+    <th>Fight</th> 
+    <th>Fire</th> 
+    <th>Water</th> 
+    <th>Electric</th> 
+    <th>Ice</th> 
+    <th>Total</th> 
+</tr>
+
+<% @trainer.tokimons.each do |tokimon| %>
+<tr>
+    <td><%= tokimon.name %></td>
+    <td><%= tokimon.weight %></td>
+    <td><%= tokimon.height %></td>
+    <td><%= tokimon.fly %></td>
+    <td><%= tokimon.fight %></td>
+    <td><%= tokimon.fire %></td>
+    <td><%= tokimon.water %></td>
+    <td><%= tokimon.electric %></td>
+    <td><%= tokimon.ice %></td>
+    <td><%= (tokimon.fly + tokimon.fight + tokimon.fire + tokimon.water + tokimon.electric + tokimon.ice) %></td>
+</tr>
+<% end %>
+</table>  
+
+<%= link_to 'Edit', edit_trainer_path(@trainer) %> |
+<%= link_to 'Back', trainers_path %>
