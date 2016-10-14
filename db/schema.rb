@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161014212032) do
+ActiveRecord::Schema.define(version: 20161009043012) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,12 +27,8 @@ ActiveRecord::Schema.define(version: 20161014212032) do
     t.integer  "ice"
     t.integer  "total"
     t.integer  "trainer_id"
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
-    t.string   "tokimon_img_file_name"
-    t.string   "tokimon_img_content_type"
-    t.integer  "tokimon_img_file_size"
-    t.datetime "tokimon_img_updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "trainers", force: :cascade do |t|

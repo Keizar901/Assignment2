@@ -30,9 +30,6 @@
 
 <% @trainer.tokimons.each do |tokimon| %>
 <tr>
-    <td>
-    <%= image_tag tokimon.tokimon_img.url(:tokimon_show) %>
-    </td>
     <td><%= tokimon.name %></td>
     <td><%= tokimon.weight %></td>
     <td><%= tokimon.height %></td>
