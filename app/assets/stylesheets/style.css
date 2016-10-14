@@ -1,0 +1,46 @@
+body {
+background-image: url(http://i.imgur.com/fSscGyk.jpg);
+background-attachment: fixed;
+background-size: 1450px 950px;
+font-size: 12.00px;
+font-family: Verdana, Arial;
+color: #FFFFFF;
+}
+
+
+table{
+	border-width: 0px 1px 1px 0px;
+    border-style: none;
+    border-color: #000000;
+    padding: 2px;
+    background-color: #000000;
+    opacity: 0.7;
+
+}
+#show{
+	border-width: 0px 1px 1px 0px;
+    border-style: none;
+    border-color: #000000;
+    padding: 2px;
+    background-color: #000000;
+    opacity: 0.7;
+    width: 225px;
+
+}
+
+h1{
+	color: white;
+    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;  
+}
+
+a:link {
+	color: #FFFFFF;
+}
+
+a:visited	{
+	color: #FFFFFF;
+}

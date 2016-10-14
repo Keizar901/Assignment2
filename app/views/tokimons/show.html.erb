@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+
+<div id="show">
 <p>
   <strong>Name:</strong>
   <%= @tokimon.name %>
@@ -54,6 +56,7 @@
   <strong>Trainer:</strong>
   <%= @tokimon.trainer.name %>
 </p>
+</div>
 
 <%= link_to 'Edit', edit_tokimon_path(@tokimon) %> |
 <%= link_to 'Back', tokimons_path %>
