@@ -4,37 +4,23 @@
 <h1>Tokimons</h1>
 
 <table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Weight</th>
-      <th>Height</th>
-      <th>Fly</th>
-      <th>Fight</th>
-      <th>Fire</th>
-      <th>Water</th>
-      <th>Electric</th>
-      <th>Ice</th>
-      <th>Total</th>
-      <th>Trainer</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  
 
   <tbody>
     <% @tokimons.each do |tokimon| %>
       <tr>
-        <td><%= tokimon.name %></td>
-        <td><%= tokimon.weight %></td>
-        <td><%= tokimon.height %></td>
-        <td><%= tokimon.fly %></td>
-        <td><%= tokimon.fight %></td>
-        <td><%= tokimon.fire %></td>
-        <td><%= tokimon.water %></td>
-        <td><%= tokimon.electric %></td>
-        <td><%= tokimon.ice %></td>
-        <td><%= tokimon.fly + tokimon.fight + tokimon.fire + tokimon.water + tokimon.electric + tokimon.ice %></td>
-        <td><%= tokimon.trainer.name %></td>
+        <td><%= image_tag tokimon.tokimon_img.url(:tokimon_index) %></td>
+        <td><strong>Name: </strong><br /><%= tokimon.name %></td>
+        <td><strong>Weight: </strong><br /><%= tokimon.weight %></td>
+        <td><strong>Height: </strong><br /><%= tokimon.height %></td>
+        <td><strong>Fly: </strong><br /><%= tokimon.fly %></td>
+        <td><strong>Fight: </strong><br /><%= tokimon.fight %></td>
+        <td><strong>Fire: </strong><br /><%= tokimon.fire %></td>
+        <td><strong>Water: </strong><br /><%= tokimon.water %></td>
+        <td><strong>Electric: </strong><br /><%= tokimon.electric %></td>
+        <td><strong>Ice: </strong><br /><%= tokimon.ice %></td>
+        <td><strong>Total: </strong><br /><%= tokimon.fly + tokimon.fight + tokimon.fire + tokimon.water + tokimon.electric + tokimon.ice %></td>
+        <td><strong>Trainer: </strong><br /><%= tokimon.trainer.name %></td>
         <td><%= link_to 'Show', tokimon %></td>
         <td><%= link_to 'Edit', edit_tokimon_path(tokimon) %></td>
         <td><%= link_to 'Destroy', tokimon, method: :delete, data: { confirm: 'Are you sure?' } %></td>
