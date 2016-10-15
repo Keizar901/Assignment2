@@ -2,7 +2,12 @@
 <%= stylesheet_link_tag "style.css" %>
 
 <h1>Trainers</h1>
-
+<%= form_tag trainers_path, :method => 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>
 <table>
   <thead>
     <tr>
