@@ -4,8 +4,7 @@ class TokimonsController < ApplicationController
   # GET /tokimons
   # GET /tokimons.json
   def index
-    #@tokimons = Tokimon.all
-    @tokimons = Tokimon.where(["name LIKE ?","%#{params[:search]}%"])
+    @tokimons = Tokimon.all
   end
 
   # GET /tokimons/1
@@ -70,6 +69,6 @@ class TokimonsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tokimon_params
-      params.permit(:name, :weight, :height, :fly, :fight, :fire, :water, :electric, :ice,:total, :trainer_id)
+      params.require(:tokimon).permit(:name, :weight, :height, :fly, :fight, :fire, :water, :electric, :ice, :total, :trainer_id)
     end
 end
