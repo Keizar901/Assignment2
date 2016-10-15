@@ -39,7 +39,8 @@
     <td><%= tokimon.water %></td>
     <td><%= tokimon.electric %></td>
     <td><%= tokimon.ice %></td>
-    <td><%= (tokimon.fly + tokimon.fight + tokimon.fire + tokimon.water + tokimon.electric + tokimon.ice) %></td>
+    <% tokimon.calculate_total %>
+    <td><%= tokimon.total %></td>
 </tr>
 <% end %>
 </table>  

@@ -4,7 +4,8 @@ class TrainersController < ApplicationController
   # GET /trainers
   # GET /trainers.json
   def index
-    @trainers = Trainer.all
+    #@trainers = Trainer.all
+    @trainers = Trainer.where(["name LIKE ?","%#{params[:search]}%"])
   end
 
   # GET /trainers/1

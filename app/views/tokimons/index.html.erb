@@ -2,13 +2,19 @@
 <%= stylesheet_link_tag "style.css" %>
 
 <h1>Tokimons</h1>
-
+<%= form_tag tokimons_path, :method => 'get' do %>
+   
+     <%= text_field_tag :search, params[:search] %>
+     <%= submit_tag "Search", :name => nil %>
+   
+ <% end %>
+ <br />
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Weight</th>
-      <th>Height</th>
+      <th><%= link_to "Name", :sort => "name" %></th>
+      <th><%= link_to "Weight", :sort => "weight" %></th>
+      <th><%= link_to "Height", :sort => "height" %></th>
       <th>Fly</th>
       <th>Fight</th>
       <th>Fire</th>
@@ -33,7 +39,8 @@
         <td><%= tokimon.water %></td>
         <td><%= tokimon.electric %></td>
         <td><%= tokimon.ice %></td>
-        <td><%= tokimon.fly + tokimon.fight + tokimon.fire + tokimon.water + tokimon.electric + tokimon.ice %></td>
+        <% tokimon.calculate_total %>
+        <td><%= tokimon.total %></td>
         <td><%= tokimon.trainer.name %></td>
         <td><%= link_to 'Show', tokimon %></td>
         <td><%= link_to 'Edit', edit_tokimon_path(tokimon) %></td>

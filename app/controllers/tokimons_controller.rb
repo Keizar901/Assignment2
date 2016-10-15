@@ -4,7 +4,8 @@ class TokimonsController < ApplicationController
   # GET /tokimons
   # GET /tokimons.json
   def index
-    @tokimons = Tokimon.all
+    #@tokimons = Tokimon.all
+    @tokimons = Tokimon.where(["name LIKE ?","%#{params[:search]}%"]).order(params[:sort])
   end
 
   # GET /tokimons/1
